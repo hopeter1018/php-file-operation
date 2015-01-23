@@ -1,0 +1,21 @@
+{
+    "name": "hopeter1018/file-operation",
+    "description": "Common File operations",
+    "keywords": ["file", "file transaction"],
+	"version": "0.0.1-dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Peter Ho",
+            "email": "hokwaichi@gmail.com",
+            "role": "Developer"
+        }
+	],
+    "require": {
+	},
+    "autoload": {
+        "psr-4": {
+            "Hopeter1018\\FileOperation\\": "src"
+        }
+    }
+}
