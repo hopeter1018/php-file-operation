@@ -8,6 +8,8 @@
 
 namespace Hopeter1018\FileOperation;
 
+use Hopeter1018\Framework\SystemPath;
+
 /**
  * FileTransaction class that support nested transaction level.<br />
  * 
@@ -94,7 +96,7 @@ final class FileTransaction
         if (! isset(static::$fileNameTmpMapping[ static::$depthIndex ])) {
             throw new \Exception("Not yet started transaction");
         }
-        $tmpName = tempnam(\Zms5Library\Framework\SystemPath::storagePath("file-transaction"), "");
+        $tmpName = tempnam(SystemPath::storagePath("file-transaction"), "");
         if ($tmpName === false) {
             throw new \Exception("Failed to create temp file under: {" . APP_SYSTEM_STORAGE . "}");
         }
