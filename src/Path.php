@@ -92,4 +92,9 @@ final class Path
         );
     }
 
+    public static function depthRelativeTo($dest, $relativeTo)
+    {
+        return substr_count(static::relativeTo($dest, $relativeTo), '/');
+    }
+
 }
