@@ -27,8 +27,8 @@ final class DirectoryOperation
     public static function copy($src, $dest, $forceCopy = false)
     {
         $result = false;
-        \Hopeter1018\Helper\HttpResponse::addMessageUat($src, 'src');
-        \Hopeter1018\Helper\HttpResponse::addMessageUat($dest, 'dest');
+//        \Hopeter1018\Helper\HttpResponse::addMessageUat($src, 'src');
+//        \Hopeter1018\Helper\HttpResponse::addMessageUat($dest, 'dest');
         if (is_link($src)) {    // Check for symlinks
             \Hopeter1018\Helper\HttpResponse::addMessageUat('is_link');
             $result = symlink(readlink($src), $dest);
