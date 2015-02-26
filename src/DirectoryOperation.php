@@ -18,6 +18,25 @@ final class DirectoryOperation
 {
 
     /**
+     * Check if a directory is writable by adding and temp file into it.
+     * @param string $dest
+     * @return boolean
+     */
+    public static function isDirWritable($dest)
+    {
+        $result = false;
+        if (is_dir($dest)) {
+            $tempFile = tempnam($dest, 'hkc-dummy-write-test');
+            file_put_contents($tempFile, 'hkc-dummy-write-test');
+            if (file_get_contents($tempFile) == 'hkc-dummy-write-test') {
+                $result = true;
+                unlink($tempFile);
+            }
+        }
+        return $result;
+    }
+
+    /**
      * 
      * @param string $src
      * @param string $dest
