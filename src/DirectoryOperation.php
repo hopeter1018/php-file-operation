@@ -55,7 +55,7 @@ final class DirectoryOperation
             $result = copy($src, $dest);
         } else {
             !is_dir($dest) and mkdir($dest, 0755, true);    // Make destination directory
-            \Hopeter1018\Helper\HttpResponse::addMessageUat('d2', '$dest');
+//            \Hopeter1018\Helper\HttpResponse::addMessageUat('d2', '$dest');
             // Loop through the folder
             $dir = dir($src);
             while (false !== $entry = $dir->read()) {
