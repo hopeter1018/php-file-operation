@@ -97,4 +97,9 @@ final class Path
         return substr_count(static::relativeTo($dest, $relativeTo), '/');
     }
 
+    public static function rootConcatPath()
+    {
+        return (DIRECTORY_SEPARATOR === '/' ? "/" : '') . call_user_func_array(array(__CLASS__, 'concatPath'), func_get_args());
+    }
+
 }
